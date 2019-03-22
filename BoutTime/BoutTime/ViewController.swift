@@ -19,9 +19,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var infoLabel: UILabel!
     
     var timer = Timer()
-    var secondsPerRound = 15
+    var secondsPerRound = 30
     
     var currentRound = 1
+    var score = 0
 
 
     let gameManager = GameManager(numberOfRounds: 4)
@@ -33,6 +34,7 @@ class ViewController: UIViewController {
 
         displayEvents()
         nextRoundButton.isHidden = true
+        startTimer()
     }
     
     // MARK: shake gesture management
@@ -58,7 +60,6 @@ class ViewController: UIViewController {
         for (index, event) in gameManager.game.events.enumerated() {
             eventsLabel[index].text = "\(event.title) -> \(event.year)"
         }
-        startTimer()
     }
     
     
@@ -79,25 +80,24 @@ class ViewController: UIViewController {
             gameManager.game.events.swapAt(buttonNumber+1, buttonNumber)
             displayEvents()
         }
-
     }
-    
     
     // MARK: Timer
     func startTimer() {
         timerLabel.text = "0:\(secondsPerRound)"
-        timer = Timer.scheduledTimer(timeInterval: 1 ,
+        timer = Timer.scheduledTimer(timeInterval: 1.0,
                                      target: self,
                                      selector: #selector(self.changeTimerLabel),
                                      userInfo: nil,
                                      repeats: true)
+        RunLoop.current.add(timer, forMode: .common)
     }
     
     // Function called each second by the timer
     @objc func changeTimerLabel()
     {
         // End of the timer (i.e. 60s)
-        if secondsPerRound == 0  || secondsPerRound < 0 {
+       if secondsPerRound == 0  || secondsPerRound < 0 {
             // Need to check if the answer is correct
             if gameManager.checkEventOrder() {
                 displayCorrectAnswer()
@@ -106,7 +106,6 @@ class ViewController: UIViewController {
             }
         } else {
             secondsPerRound -= 1
-            
             timerLabel.text = "0:\(String(format: "%02d", secondsPerRound))"
         }
     }
@@ -114,7 +113,8 @@ class ViewController: UIViewController {
     // Re-init the timer
     func reinitTimer() {
         timer.invalidate()
-        secondsPerRound = 15
+        secondsPerRound = 30
+        startTimer()
     }
     
     
@@ -127,7 +127,7 @@ class ViewController: UIViewController {
         nextRoundButton.setImage(imageSuccess, for: .normal)
         nextRoundButton.isHidden = false
         infoLabel.text = "Tap events to learn more"
-
+        score += 1
     }
     
     func displayWrongAnswer() {
@@ -138,6 +138,7 @@ class ViewController: UIViewController {
         nextRoundButton.isHidden = false
         infoLabel.text = "Tap events to learn more"
     }
+    
     
     func prepareNextRound() {
         currentRound += 1
@@ -150,11 +151,29 @@ class ViewController: UIViewController {
             displayEvents()
         } else {
             print("end game")
+            performSegue(withIdentifier: "EndOfGame", sender: nil)
         }
     }
     
     @IBAction func nextRoundButtonTapped(_ sender: UIButton) {
         prepareNextRound()
+    }
+    
+    // MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "EndOfGame" {
+            if let endGameController = segue.destination as? EndGameController {
+                endGameController.score = score
+            }
+        }
+    }
+    
+    // MARK: Naviguation
+    @IBAction func unwindToViewController(segue: UIStoryboardSegue) {
+        currentRound = 0
+        score = 0
+        prepareNextRound()
+        
     }
 }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WoJ-Vc-mtw">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -252,11 +252,99 @@
                         <outletCollection property="downButtons" destination="2m6-nc-x1u" collectionClass="NSMutableArray" id="dAn-9f-FGk"/>
                         <outletCollection property="downButtons" destination="SHf-Oc-xLI" collectionClass="NSMutableArray" id="h9k-Wm-5zI"/>
                         <outletCollection property="downButtons" destination="xGk-De-F0U" collectionClass="NSMutableArray" id="mTx-jE-F7P"/>
+                        <segue destination="0yl-TL-1vT" kind="presentation" identifier="EndOfGame" id="Vr3-ua-bwu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="303" y="99"/>
+            <point key="canvasLocation" x="76" y="72"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="chl-R5-fGM">
+            <objects>
+                <viewController id="RiY-cX-3rf" customClass="WebViewController" customModule="BoutTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mpJ-VF-zMv" customClass="Web">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="s5f-2v-fkI"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Tzj-ef-Wep"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NOq-UZ-sSP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2144.8000000000002" y="2.2488755622188905"/>
+        </scene>
+        <!--End Game Controller-->
+        <scene sceneID="fSn-yf-OfY">
+            <objects>
+                <viewController id="0yl-TL-1vT" customClass="EndGameController" customModule="BoutTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9jl-Oh-YVo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fG5-rm-hh3">
+                                <rect key="frame" x="140.5" y="270.5" width="94" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3/6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rw0-8f-T1r">
+                                <rect key="frame" x="156.5" y="309.5" width="62" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDn-xZ-oDM">
+                                <rect key="frame" x="100" y="382.5" width="175" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bDn-xZ-oDM" secondAttribute="height" multiplier="225:71" id="MJ1-Kc-HTZ"/>
+                                </constraints>
+                                <state key="normal" image="play_again"/>
+                                <connections>
+                                    <segue destination="20O-qs-HzL" kind="unwind" unwindAction="unwindToViewControllerWithSegue:" id="BP7-gb-RYE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.026601751440000002" green="0.1767927758" blue="0.34882614210000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="bDn-xZ-oDM" secondAttribute="trailing" constant="100" id="07X-fe-ntQ"/>
+                            <constraint firstItem="rw0-8f-T1r" firstAttribute="centerY" secondItem="9jl-Oh-YVo" secondAttribute="centerY" id="9og-qw-YB0"/>
+                            <constraint firstItem="fG5-rm-hh3" firstAttribute="centerX" secondItem="9jl-Oh-YVo" secondAttribute="centerX" id="Fqc-wn-6ew"/>
+                            <constraint firstItem="bDn-xZ-oDM" firstAttribute="top" secondItem="rw0-8f-T1r" secondAttribute="bottom" constant="25" id="Udg-8Z-avX"/>
+                            <constraint firstItem="bDn-xZ-oDM" firstAttribute="centerX" secondItem="9jl-Oh-YVo" secondAttribute="centerX" id="Zy2-1A-sfB"/>
+                            <constraint firstItem="bDn-xZ-oDM" firstAttribute="leading" secondItem="9jl-Oh-YVo" secondAttribute="leading" constant="100" id="rwc-QH-78C"/>
+                            <constraint firstItem="rw0-8f-T1r" firstAttribute="top" secondItem="fG5-rm-hh3" secondAttribute="bottom" constant="15" id="sl3-w3-Ckj"/>
+                            <constraint firstItem="rw0-8f-T1r" firstAttribute="centerX" secondItem="9jl-Oh-YVo" secondAttribute="centerX" id="wEc-Vn-OTF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="koP-qI-USP"/>
+                    </view>
+                    <connections>
+                        <outlet property="scoreLabel" destination="rw0-8f-T1r" id="RAn-8s-Vho"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qXo-pA-PID" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="20O-qs-HzL" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1143" y="806"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VwZ-5G-lha">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WoJ-Vc-mtw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FId-9z-aaC">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="RiY-cX-3rf" kind="relationship" relationship="rootViewController" id="0B5-uz-nIQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i80-Rj-uk6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1205.5999999999999" y="2.2488755622188905"/>
         </scene>
     </scenes>
     <resources>
@@ -265,6 +353,7 @@
         <image name="down_half" width="158" height="229"/>
         <image name="down_half_selected" width="158" height="229"/>
         <image name="next_round_success" width="558" height="142"/>
+        <image name="play_again" width="450" height="142"/>
         <image name="up_full" width="158" height="457"/>
         <image name="up_full_selected" width="158" height="457"/>
         <image name="up_half" width="158" height="229"/>
