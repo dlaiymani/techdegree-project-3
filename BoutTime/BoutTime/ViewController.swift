@@ -19,7 +19,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var infoLabel: UILabel!
     
     var timer = Timer()
-    var secondsPerRound = 59
+    var secondsPerRound = 15
+    
+    var currentRound = 1
 
 
     let gameManager = GameManager(numberOfRounds: 4)
@@ -43,19 +45,10 @@ class ViewController: UIViewController {
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
             if gameManager.checkEventOrder() {
-                timer.invalidate()
-                timerLabel.isHidden = true
-                let imageWrong = UIImage(named: "next_round_success")
-                nextRoundButton.setImage(imageWrong, for: .normal)
-                nextRoundButton.isHidden = false
+                displayCorrectAnswer()
             } else {
-                timer.invalidate()
-                timerLabel.isHidden = true
-                let imageWrong = UIImage(named: "next_round_fail")
-                nextRoundButton.setImage(imageWrong, for: .normal)
-                nextRoundButton.isHidden = false
+                displayWrongAnswer()
             }
-            infoLabel.text = "Tap events to learn more"
         }
     }
 
@@ -66,8 +59,6 @@ class ViewController: UIViewController {
             eventsLabel[index].text = "\(event.title) -> \(event.year)"
         }
         startTimer()
-       // print(currentEvents.isSorted())
-
     }
     
     
@@ -79,9 +70,6 @@ class ViewController: UIViewController {
             gameManager.game.events.swapAt(buttonNumber+1, buttonNumber)
             displayEvents()
         }
-     //   sender.isSelected = !sender.isSelected
-
-        print(buttonNumber)
     }
     
     
@@ -105,27 +93,68 @@ class ViewController: UIViewController {
                                      repeats: true)
     }
     
-    // Function called eaxh second by the timer
+    // Function called each second by the timer
     @objc func changeTimerLabel()
     {
         // End of the timer (i.e. 60s)
         if secondsPerRound == 0  || secondsPerRound < 0 {
-            timer.invalidate()
-            
-            // FIXME: manage the end of the timer
-            //answerLabel.text = "Sorry, Too Late"
-            //loadNextRound(delay: 2)
-            
+            // Need to check if the answer is correct
+            if gameManager.checkEventOrder() {
+                displayCorrectAnswer()
+            } else {
+                displayWrongAnswer()
+            }
         } else {
             secondsPerRound -= 1
-            timerLabel.text = "0:\(secondsPerRound)"
+            
+            timerLabel.text = "0:\(String(format: "%02d", secondsPerRound))"
         }
     }
     
     // Re-init the timer
     func reinitTimer() {
         timer.invalidate()
-        secondsPerRound = 60
+        secondsPerRound = 15
+    }
+    
+    
+    // MARK: Next round management
+ 
+    func displayCorrectAnswer() {
+        timer.invalidate()
+        timerLabel.isHidden = true
+        let imageSuccess = UIImage(named: "next_round_success")
+        nextRoundButton.setImage(imageSuccess, for: .normal)
+        nextRoundButton.isHidden = false
+        infoLabel.text = "Tap events to learn more"
+
+    }
+    
+    func displayWrongAnswer() {
+        timer.invalidate()
+        timerLabel.isHidden = true
+        let imageWrong = UIImage(named: "next_round_fail")
+        nextRoundButton.setImage(imageWrong, for: .normal)
+        nextRoundButton.isHidden = false
+        infoLabel.text = "Tap events to learn more"
+    }
+    
+    func prepareNextRound() {
+        currentRound += 1
+        if currentRound <= 2 {
+            gameManager.reinitGame()
+            nextRoundButton.isHidden = true
+            timerLabel.isHidden = false
+            infoLabel.text = "Shake to complete"
+            reinitTimer()
+            displayEvents()
+        } else {
+            print("end game")
+        }
+    }
+    
+    @IBAction func nextRoundButtonTapped(_ sender: UIButton) {
+        prepareNextRound()
     }
 }
 
