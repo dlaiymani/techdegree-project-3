@@ -33,6 +33,10 @@ class GameManager {
     }
     
     // FIXME:  Check if a user answer is correct
-    func checkAnswer() {
+    func checkEventOrder() -> Bool {
+        
+        return game.events.isSorted()
+
+        
     }
 }

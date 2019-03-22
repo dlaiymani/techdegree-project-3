@@ -17,6 +17,7 @@
 		AA4D32982243ECD200571758 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4D32972243ECD200571758 /* Game.swift */; };
 		AA4D329A2243EDA600571758 /* PlistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4D32992243EDA600571758 /* PlistManager.swift */; };
 		AA4D329C2244DF2B00571758 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4D329B2244DF2B00571758 /* GameManager.swift */; };
+		AA4D32A022450E0D00571758 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4D329F22450E0D00571758 /* ArrayExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		AA4D32972243ECD200571758 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		AA4D32992243EDA600571758 /* PlistManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistManager.swift; sourceTree = "<group>"; };
 		AA4D329B2244DF2B00571758 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		AA4D329F22450E0D00571758 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				AA4D32952243EC4000571758 /* Event.swift */,
 				AA4D32972243ECD200571758 /* Game.swift */,
 				AA4D329B2244DF2B00571758 /* GameManager.swift */,
+				AA4D329F22450E0D00571758 /* ArrayExtension.swift */,
 				AA4D32992243EDA600571758 /* PlistManager.swift */,
 			);
 			path = BoutTime;
@@ -155,6 +158,7 @@
 				AA4D329C2244DF2B00571758 /* GameManager.swift in Sources */,
 				AA4D32822243DDD800571758 /* ViewController.swift in Sources */,
 				AA4D32962243EC4000571758 /* Event.swift in Sources */,
+				AA4D32A022450E0D00571758 /* ArrayExtension.swift in Sources */,
 				AA4D32802243DDD800571758 /* AppDelegate.swift in Sources */,
 				AA4D32982243ECD200571758 /* Game.swift in Sources */,
 			);

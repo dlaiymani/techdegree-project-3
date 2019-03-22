@@ -40,9 +40,10 @@ class ViewController: UIViewController {
     // MARK: display the round
     func displayEvents() {
         for (index, event) in currentEvents.enumerated() {
-            eventsLabel[index].text = event.title
+            eventsLabel[index].text = "\(event.title) -> \(event.year)"
         }
         startTimer()
+        print(currentEvents.isSorted())
 
     }
     

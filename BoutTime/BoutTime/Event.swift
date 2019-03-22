@@ -8,7 +8,12 @@
 
 import Foundation
 
-struct Event {
+struct Event: Comparable {
     let title: String
     let year: Int
+    
+    static func < (lhs: Event, rhs: Event) -> Bool {
+        return lhs.year < rhs.year
+    }
+    
 }
