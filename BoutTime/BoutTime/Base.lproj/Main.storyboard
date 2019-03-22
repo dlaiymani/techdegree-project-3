@@ -46,6 +46,10 @@
                                                     <constraint firstAttribute="width" constant="40" id="eqn-g9-j1u"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="down_full"/>
+                                                <state key="selected" backgroundImage="down_full_selected"/>
+                                                <connections>
+                                                    <action selector="downButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w0Z-KA-P6e"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -79,10 +83,18 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AXE-Ad-lxX">
                                                         <rect key="frame" x="0.0" y="0.0" width="40" height="55.5"/>
                                                         <state key="normal" backgroundImage="up_half"/>
+                                                        <state key="selected" backgroundImage="up_half_selected"/>
+                                                        <connections>
+                                                            <action selector="upButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yk8-Sq-XxE"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SHf-Oc-xLI">
                                                         <rect key="frame" x="0.0" y="55.5" width="40" height="56"/>
                                                         <state key="normal" backgroundImage="down_half"/>
+                                                        <state key="selected" backgroundImage="down_half_selected"/>
+                                                        <connections>
+                                                            <action selector="downButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jbt-D5-bnV"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -119,10 +131,18 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2LI-M9-Oqw">
                                                         <rect key="frame" x="0.0" y="0.0" width="40" height="56"/>
                                                         <state key="normal" backgroundImage="up_half"/>
+                                                        <state key="selected" backgroundImage="up_half_selected"/>
+                                                        <connections>
+                                                            <action selector="upButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lk4-2q-28c"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGk-De-F0U">
                                                         <rect key="frame" x="0.0" y="56" width="40" height="56"/>
                                                         <state key="normal" backgroundImage="down_half"/>
+                                                        <state key="selected" backgroundImage="down_half_selected"/>
+                                                        <connections>
+                                                            <action selector="downButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0So-uw-Qzr"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -162,6 +182,10 @@
                                                             <constraint firstAttribute="width" constant="40" id="NkU-O1-EVh"/>
                                                         </constraints>
                                                         <state key="normal" backgroundImage="up_full"/>
+                                                        <state key="selected" backgroundImage="up_full_selected"/>
+                                                        <connections>
+                                                            <action selector="upButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OAU-zE-Xf4"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -202,17 +226,33 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outletCollection property="eventsLabel" destination="pMg-TD-JsA" collectionClass="NSMutableArray" id="oKZ-8W-AFw"/>
+                        <outletCollection property="eventsLabel" destination="3Zk-gZ-o0E" collectionClass="NSMutableArray" id="Atp-Js-Wrr"/>
+                        <outletCollection property="eventsLabel" destination="YbM-7k-9Sh" collectionClass="NSMutableArray" id="nhS-7M-nc2"/>
+                        <outletCollection property="eventsLabel" destination="c0j-fx-cLT" collectionClass="NSMutableArray" id="DcI-yM-CdP"/>
+                        <outletCollection property="upButtons" destination="AXE-Ad-lxX" collectionClass="NSMutableArray" id="fJe-NX-MQG"/>
+                        <outletCollection property="upButtons" destination="2LI-M9-Oqw" collectionClass="NSMutableArray" id="aDS-Hh-FpP"/>
+                        <outletCollection property="upButtons" destination="nAi-72-mV4" collectionClass="NSMutableArray" id="d3Z-e0-WVj"/>
+                        <outletCollection property="downButtons" destination="2m6-nc-x1u" collectionClass="NSMutableArray" id="dAn-9f-FGk"/>
+                        <outletCollection property="downButtons" destination="SHf-Oc-xLI" collectionClass="NSMutableArray" id="h9k-Wm-5zI"/>
+                        <outletCollection property="downButtons" destination="xGk-De-F0U" collectionClass="NSMutableArray" id="mTx-jE-F7P"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="101.59999999999999" y="97.601199400299862"/>
+            <point key="canvasLocation" x="303" y="99"/>
         </scene>
     </scenes>
     <resources>
         <image name="down_full" width="158" height="457"/>
+        <image name="down_full_selected" width="158" height="457"/>
         <image name="down_half" width="158" height="229"/>
+        <image name="down_half_selected" width="158" height="229"/>
         <image name="next_round_success" width="558" height="142"/>
         <image name="up_full" width="158" height="457"/>
+        <image name="up_full_selected" width="158" height="457"/>
         <image name="up_half" width="158" height="229"/>
+        <image name="up_half_selected" width="158" height="229"/>
     </resources>
 </document>
