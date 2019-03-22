@@ -16,34 +16,57 @@ class ViewController: UIViewController {
     @IBOutlet var downButtons: [UIButton]!
     @IBOutlet weak var nextRoundButton: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var infoLabel: UILabel!
     
     var timer = Timer()
     var secondsPerRound = 59
 
 
     let gameManager = GameManager(numberOfRounds: 4)
-    var currentEvents: [Event]
-    
-    required init?(coder aDecoder: NSCoder) {
-        self.currentEvents = gameManager.randomEvent()
-        super.init(coder: aDecoder)
-    }
+   
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.becomeFirstResponder()
 
         displayEvents()
         nextRoundButton.isHidden = true
+    }
+    
+    // MARK: shake gesture management
+    override var canBecomeFirstResponder: Bool {
+        get {
+            return true
+        }
+    }
+    
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            if gameManager.checkEventOrder() {
+                timer.invalidate()
+                timerLabel.isHidden = true
+                let imageWrong = UIImage(named: "next_round_success")
+                nextRoundButton.setImage(imageWrong, for: .normal)
+                nextRoundButton.isHidden = false
+            } else {
+                timer.invalidate()
+                timerLabel.isHidden = true
+                let imageWrong = UIImage(named: "next_round_fail")
+                nextRoundButton.setImage(imageWrong, for: .normal)
+                nextRoundButton.isHidden = false
+            }
+            infoLabel.text = "Tap events to learn more"
+        }
     }
 
 
     // MARK: display the round
     func displayEvents() {
-        for (index, event) in currentEvents.enumerated() {
+        for (index, event) in gameManager.game.events.enumerated() {
             eventsLabel[index].text = "\(event.title) -> \(event.year)"
         }
         startTimer()
-        print(currentEvents.isSorted())
+       // print(currentEvents.isSorted())
 
     }
     
@@ -53,7 +76,7 @@ class ViewController: UIViewController {
        // sender.isHighlighted = !sender.isHighlighted
         let buttonNumber = downButtons.index(where: {$0 == sender})
         if let buttonNumber = buttonNumber {
-            currentEvents.swapAt(buttonNumber+1, buttonNumber)
+            gameManager.game.events.swapAt(buttonNumber+1, buttonNumber)
             displayEvents()
         }
      //   sender.isSelected = !sender.isSelected
@@ -65,7 +88,7 @@ class ViewController: UIViewController {
     @IBAction func upButtonTapped(_ sender: UIButton) {
         let buttonNumber = upButtons.index(where: {$0 == sender})
         if let buttonNumber = buttonNumber {
-            currentEvents.swapAt(buttonNumber+1, buttonNumber)
+            gameManager.game.events.swapAt(buttonNumber+1, buttonNumber)
             displayEvents()
         }
 

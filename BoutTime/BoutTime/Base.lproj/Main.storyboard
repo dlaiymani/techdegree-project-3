@@ -199,13 +199,13 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AYD-ve-M9n">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AYD-ve-M9n">
                                 <rect key="frame" x="94.5" y="537" width="186" height="53"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="53" id="am3-tI-fKs"/>
                                     <constraint firstAttribute="width" constant="186" id="urs-6J-FHn"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="next_round_success"/>
+                                <state key="normal" image="next_round_success"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shake to complete" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVg-vf-H0S">
                                 <rect key="frame" x="116.5" y="605" width="142.5" height="20.5"/>
@@ -236,6 +236,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="infoLabel" destination="GVg-vf-H0S" id="hu5-ke-asI"/>
                         <outlet property="nextRoundButton" destination="AYD-ve-M9n" id="mK3-E1-mrB"/>
                         <outlet property="timerLabel" destination="qHQ-KL-27M" id="RlD-UM-IjT"/>
                         <outletCollection property="eventsLabel" destination="pMg-TD-JsA" collectionClass="NSMutableArray" id="oKZ-8W-AFw"/>
