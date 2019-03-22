@@ -40,13 +40,14 @@
                                                     <constraint firstItem="pMg-TD-JsA" firstAttribute="centerX" secondItem="kkm-0Y-IC4" secondAttribute="centerX" id="kbg-WW-1f8"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2m6-nc-x1u">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2m6-nc-x1u">
                                                 <rect key="frame" x="295" y="0.0" width="40" height="112"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="40" id="eqn-g9-j1u"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="down_full"/>
                                                 <state key="selected" backgroundImage="down_full_selected"/>
+                                                <state key="highlighted" backgroundImage="down_full_selected"/>
                                                 <connections>
                                                     <action selector="downButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w0Z-KA-P6e"/>
                                                 </connections>
@@ -212,12 +213,20 @@
                                 <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHQ-KL-27M">
+                                <rect key="frame" x="145.5" y="539" width="84.5" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.026601751443155318" green="0.17679277583107861" blue="0.34882614213197971" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Vzs-iG-hkx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="6EN-gp-oow"/>
                             <constraint firstItem="GVg-vf-H0S" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BzK-d7-Ggj"/>
                             <constraint firstItem="AYD-ve-M9n" firstAttribute="top" secondItem="kSo-bm-Qlb" secondAttribute="bottom" constant="20" id="Fh9-wo-Fhk"/>
+                            <constraint firstItem="GVg-vf-H0S" firstAttribute="top" secondItem="qHQ-KL-27M" secondAttribute="bottom" constant="18" id="I4a-6e-3ZO"/>
+                            <constraint firstItem="qHQ-KL-27M" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="N7l-IY-ISk"/>
                             <constraint firstAttribute="trailing" secondItem="Vzs-iG-hkx" secondAttribute="trailing" constant="20" id="QIl-tm-nEF"/>
                             <constraint firstItem="AYD-ve-M9n" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lDQ-x4-cia"/>
                             <constraint firstAttribute="bottom" secondItem="Vzs-iG-hkx" secondAttribute="bottom" constant="150" id="n5M-yw-X65"/>
@@ -227,6 +236,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="nextRoundButton" destination="AYD-ve-M9n" id="mK3-E1-mrB"/>
+                        <outlet property="timerLabel" destination="qHQ-KL-27M" id="RlD-UM-IjT"/>
                         <outletCollection property="eventsLabel" destination="pMg-TD-JsA" collectionClass="NSMutableArray" id="oKZ-8W-AFw"/>
                         <outletCollection property="eventsLabel" destination="3Zk-gZ-o0E" collectionClass="NSMutableArray" id="Atp-Js-Wrr"/>
                         <outletCollection property="eventsLabel" destination="YbM-7k-9Sh" collectionClass="NSMutableArray" id="nhS-7M-nc2"/>
