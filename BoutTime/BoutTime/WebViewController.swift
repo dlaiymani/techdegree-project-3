@@ -34,15 +34,12 @@ class WebViewController: UIViewController, WKNavigationDelegate {
     }
     
     // MARK: WKNavigationDelegate protocol
-    
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         title = webView.title
     }
     
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-        
         showAlert(title: "Error Loading Website", message: "The website is unaccessible")
-
     }
     
     
@@ -62,16 +59,8 @@ class WebViewController: UIViewController, WKNavigationDelegate {
     }
     
     // MARK: - Navigation
-
     @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
-    /*
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

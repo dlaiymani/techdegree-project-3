@@ -2,180 +2,180 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>New item - 25</key>
+	<key>First episode of The Big Bang Theory</key>
 	<dict>
 		<key>url</key>
-		<string>https://www.apple.fr</string>
+		<string>https://en.wikipedia.org/wiki/Pilot_(The_Big_Bang_Theory)</string>
 		<key>year</key>
-		<string>1910</string>
+		<string>2007</string>
 	</dict>
-	<key>New item - 24</key>
+	<key>Year of birth of Kaley Cuoco (Penny)</key>
 	<dict>
 		<key>url</key>
-		<string>https://www.apple.fr</string>
-		<key>year</key>
-		<string>1945</string>
-	</dict>
-	<key>New item - 22</key>
-	<dict>
-		<key>year</key>
-		<string>1997</string>
-		<key>url</key>
-		<string>https://www.google.fr</string>
-	</dict>
-	<key>New item - 21</key>
-	<dict>
-		<key>year</key>
-		<string>100</string>
-		<key>url</key>
-		<string>https://www.google.com</string>
-	</dict>
-	<key>New item - 20</key>
-	<dict>
-		<key>url</key>
-		<string>https://www.dell.fr</string>
-		<key>year</key>
-		<string>1976</string>
-	</dict>
-	<key>New item - 19</key>
-	<dict>
-		<key>url</key>
-		<string>https://www.apple.de</string>
+		<string>https://fr.wikipedia.org/wiki/Kaley_Cuoco</string>
 		<key>year</key>
 		<string>1987</string>
 	</dict>
-	<key>New item - 18</key>
-	<dict>
-		<key>url</key>
-		<string>https://www.toto.com</string>
-		<key>year</key>
-		<string>1900</string>
-	</dict>
-	<key>New item - 17</key>
+	<key>Year of birth of Jim Parson (Sheldon)</key>
 	<dict>
 		<key>year</key>
-		<string>2000</string>
+		<string>1980</string>
 		<key>url</key>
-		<string>https://www.goole.de</string>
+		<string>https://fr.wikipedia.org/wiki/Jim_Parsons</string>
 	</dict>
-	<key>New item - 16</key>
+	<key>Year of birth of Simon Helberg (Howard)</key>
 	<dict>
 		<key>year</key>
-		<string>2007</string>
+		<string>1980</string>
 		<key>url</key>
-		<string>https://www.dell.de</string>
+		<string>https://www.imdb.com/name/nm0374865/</string>
 	</dict>
-	<key>New item - 15</key>
+	<key>Year of birth of Johnny Galeck (Leonard)i</key>
 	<dict>
 		<key>url</key>
-		<string>https://www.dell.com</string>
+		<string>https://www.imdb.com/name/nm0301959/</string>
+		<key>year</key>
+		<string>1975</string>
+	</dict>
+	<key>Year of birth of Kunal Nayyar (Raj)</key>
+	<dict>
+		<key>url</key>
+		<string>https://www.imdb.com/name/nm2471798/</string>
+		<key>year</key>
+		<string>1981</string>
+	</dict>
+	<key>Last episode of The Big Bang Theory</key>
+	<dict>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/The_Big_Bang_Theory</string>
+		<key>year</key>
+		<string>2019</string>
+	</dict>
+	<key>Year of the first Star Wars</key>
+	<dict>
+		<key>year</key>
+		<string>1977</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Star_Wars</string>
+	</dict>
+	<key>Year of the first episode of Star Trek: The Original Series</key>
+	<dict>
+		<key>year</key>
+		<string>1966</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Star_Trek:_The_Original_Series</string>
+	</dict>
+	<key>Year of the first episode of Star Trek: The Next Generation</key>
+	<dict>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Star_Trek:_The_Next_Generation</string>
+		<key>year</key>
+		<string>1987</string>
+	</dict>
+	<key>Year of birth of Leonard Nimoy</key>
+	<dict>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Leonard_Nimoy</string>
+		<key>year</key>
+		<string>1931</string>
+	</dict>
+	<key>Release date of World of Warcraft</key>
+	<dict>
+		<key>year</key>
+		<string>2004</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/World_of_Warcraft</string>
+	</dict>
+	<key>Release date of Mario</key>
+	<dict>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Mario_(franchise)</string>
+		<key>year</key>
+		<string>1981</string>
+	</dict>
+	<key>Year of creation of The Big Comic Magazine</key>
+	<dict>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/DC_Comics</string>
+		<key>year</key>
+		<string>1935</string>
+	</dict>
+	<key>First apparition of The Flash</key>
+	<dict>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Flash_(comics)</string>
+		<key>year</key>
+		<string>1940</string>
+	</dict>
+	<key>First apparition of Aquaman</key>
+	<dict>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Aquaman</string>
+		<key>year</key>
+		<string>1941</string>
+	</dict>
+	<key>First apparition of Superman</key>
+	<dict>
+		<key>year</key>
+		<string>1938</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Superman</string>
+	</dict>
+	<key>Release of the first novel of Harry Potter</key>
+	<dict>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Harry_Potter</string>
+		<key>year</key>
+		<string>1997</string>
+	</dict>
+	<key>Release of the third novel of Harry Potter</key>
+	<dict>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Harry_Potter</string>
+		<key>year</key>
+		<string>1999</string>
+	</dict>
+	<key>First apparition of Wil Wheaton</key>
+	<dict>
+		<key>year</key>
+		<string>2009</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Wil_Wheaton</string>
+	</dict>
+	<key>Year of foundation of CalTech</key>
+	<dict>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/California_Institute_of_Technology</string>
+		<key>year</key>
+		<string>1891</string>
+	</dict>
+	<key>Year of birth of Stephen Hawking</key>
+	<dict>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Stephen_Hawking</string>
+		<key>year</key>
+		<string>1942</string>
+	</dict>
+	<key>First apparition of Bernadette</key>
+	<dict>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Melissa_Rauch</string>
+		<key>year</key>
+		<string>2009</string>
+	</dict>
+	<key>First apparition of Amy</key>
+	<dict>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/List_of_The_Big_Bang_Theory_characters#Amy</string>
+		<key>year</key>
+		<string>2010</string>
+	</dict>
+	<key>First The Cheesecake Factory ouverture</key>
+	<dict>
 		<key>year</key>
 		<string>1978</string>
-	</dict>
-	<key>New item - 14</key>
-	<dict>
 		<key>url</key>
-		<string>https://www.univ-fcomte.fr</string>
-		<key>year</key>
-		<string>1920</string>
-	</dict>
-	<key>New item - 13</key>
-	<dict>
-		<key>year</key>
-		<string>1927</string>
-		<key>url</key>
-		<string>https://www.apple.it</string>
-	</dict>
-	<key>New item - 12</key>
-	<dict>
-		<key>url</key>
-		<string>https://www.google.fr</string>
-		<key>year</key>
-		<string>1932</string>
-	</dict>
-	<key>New item - 11</key>
-	<dict>
-		<key>url</key>
-		<string>https://www.wikipedia.fr</string>
-		<key>year</key>
-		<string>2003</string>
-	</dict>
-	<key>New item - 23</key>
-	<dict>
-		<key>url</key>
-		<string>https://www.dell.it</string>
-		<key>year</key>
-		<string>27</string>
-	</dict>
-	<key>New item - 10</key>
-	<dict>
-		<key>url</key>
-		<string>https://www.tf1.fr</string>
-		<key>year</key>
-		<string>1971</string>
-	</dict>
-	<key>New item - 9</key>
-	<dict>
-		<key>year</key>
-		<string>1968</string>
-		<key>url</key>
-		<string>https://www.france2.fr</string>
-	</dict>
-	<key>New item - 8</key>
-	<dict>
-		<key>url</key>
-		<string>https://www.france24.fr</string>
-		<key>year</key>
-		<string>1920</string>
-	</dict>
-	<key>New item - 7</key>
-	<dict>
-		<key>url</key>
-		<string>https//www.arte.fr</string>
-		<key>year</key>
-		<string>1960</string>
-	</dict>
-	<key>New item - 6</key>
-	<dict>
-		<key>year</key>
-		<string>-200</string>
-		<key>url</key>
-		<string>https://www.c8.fr</string>
-	</dict>
-	<key>New item - 5</key>
-	<dict>
-		<key>url</key>
-		<string>https://www.france3.fr</string>
-		<key>year</key>
-		<string>1978</string>
-	</dict>
-	<key>New item - 4</key>
-	<dict>
-		<key>url</key>
-		<string>https://www.france5.fr</string>
-		<key>year</key>
-		<string>1943</string>
-	</dict>
-	<key>New item - 3</key>
-	<dict>
-		<key>url</key>
-		<string>https://www.netflix.com</string>
-		<key>year</key>
-		<string>2000</string>
-	</dict>
-	<key>New item - 2</key>
-	<dict>
-		<key>url</key>
-		<string>https://www.sephora.fr</string>
-		<key>year</key>
-		<string>1990</string>
-	</dict>
-	<key>New item - 1</key>
-	<dict>
-		<key>year</key>
-		<string>1989</string>
-		<key>url</key>
-		<string>https://www.mycanal.fr</string>
+		<string>https://en.wikipedia.org/wiki/The_Cheesecake_Factory#In_popular_culture</string>
 	</dict>
 </dict>
 </plist>
