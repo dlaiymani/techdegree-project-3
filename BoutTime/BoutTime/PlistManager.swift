@@ -16,12 +16,12 @@ enum EventsListError: Error {
 
 class PlistConverter {
     
-    static func dictionary(fromFile name: String, ofType: String) throws -> [String: String] {
+    static func dictionary(fromFile name: String, ofType: String) throws -> [String: AnyObject] {
         guard let path = Bundle.main.path(forResource: name, ofType: ofType) else {
             throw EventsListError.invalidResource
         }
         
-        guard let dictionary = NSDictionary(contentsOfFile: path) as? [String: String] else {
+        guard let dictionary = NSDictionary(contentsOfFile: path) as? [String: AnyObject] else {
             throw EventsListError.conversionFailure
         }
         
@@ -31,13 +31,15 @@ class PlistConverter {
 }
 
 class EventsUnarchiver {
-    static func eventsList(fromDictionary dictionary: [String: String]) -> [Event] {
+    static func eventsList(fromDictionary dictionary: [String: AnyObject]) -> [Event] {
         
         var eventsList: [Event] = []
         for (key, value) in dictionary {
-            if let year = Int(value) {
-                let event = Event(title: key, year: year)
-                eventsList.append(event)
+            if let itemDictionary = value as? [String: Any],let year = itemDictionary["year"] as? String, let url = itemDictionary["url"] as? String {
+                if let year = Int(year) {
+                    let event = Event(title: key, year: Int(year), url: url)
+                    eventsList.append(event)
+                }
             }
         }
         return eventsList

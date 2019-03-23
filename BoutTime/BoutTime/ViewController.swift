@@ -11,7 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     
     // MARK: Outlets
-    @IBOutlet var eventsLabel: [UILabel]!
+    //@IBOutlet var eventsLabel: [UILabel]!
+    @IBOutlet var eventsButtons: [UIButton]!
     @IBOutlet var upButtons: [UIButton]!
     @IBOutlet var downButtons: [UIButton]!
     @IBOutlet weak var nextRoundButton: UIButton!
@@ -58,7 +59,9 @@ class ViewController: UIViewController {
     // MARK: display the round
     func displayEvents() {
         for (index, event) in gameManager.game.events.enumerated() {
-            eventsLabel[index].text = "\(event.title) -> \(event.year)"
+            eventsButtons[index].setTitle("\(event.title) -> \(event.year)", for: .normal)
+            eventsButtons[index].isEnabled = false
+            print(event.url)
         }
     }
     
@@ -119,7 +122,12 @@ class ViewController: UIViewController {
     
     
     // MARK: Next round management
- 
+    func enableButtons() {
+        for button in eventsButtons {
+            button.isEnabled = true
+        }
+    }
+    
     func displayCorrectAnswer() {
         timer.invalidate()
         timerLabel.isHidden = true
@@ -128,6 +136,7 @@ class ViewController: UIViewController {
         nextRoundButton.isHidden = false
         infoLabel.text = "Tap events to learn more"
         score += 1
+        enableButtons()
     }
     
     func displayWrongAnswer() {
@@ -137,6 +146,7 @@ class ViewController: UIViewController {
         nextRoundButton.setImage(imageWrong, for: .normal)
         nextRoundButton.isHidden = false
         infoLabel.text = "Tap events to learn more"
+        enableButtons()
     }
     
     
@@ -165,6 +175,10 @@ class ViewController: UIViewController {
             if let endGameController = segue.destination as? EndGameController {
                 endGameController.score = score
             }
+        } else { // WebView Segue
+            if let navigationViewController = segue.destination as? UINavigationController,
+                 let webViewController = navigationViewController.topViewController as? WebViewController , let sender = sender as? UIButton {
+                webViewController.url = gameManager.game.events[sender.tag].url            }
         }
     }
     

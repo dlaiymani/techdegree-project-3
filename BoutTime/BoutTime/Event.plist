@@ -3,54 +3,179 @@
 <plist version="1.0">
 <dict>
 	<key>New item - 25</key>
-	<string>1200</string>
+	<dict>
+		<key>url</key>
+		<string>https://www.apple.fr</string>
+		<key>year</key>
+		<string>1910</string>
+	</dict>
 	<key>New item - 24</key>
-	<string>1990</string>
-	<key>New item - 23</key>
-	<string>1924</string>
+	<dict>
+		<key>url</key>
+		<string>https://www.apple.fr</string>
+		<key>year</key>
+		<string>1945</string>
+	</dict>
 	<key>New item - 22</key>
-	<string>1997</string>
+	<dict>
+		<key>year</key>
+		<string>1997</string>
+		<key>url</key>
+		<string>https://www.google.fr</string>
+	</dict>
 	<key>New item - 21</key>
-	<string>100</string>
+	<dict>
+		<key>year</key>
+		<string>100</string>
+		<key>url</key>
+		<string>https://www.google.com</string>
+	</dict>
 	<key>New item - 20</key>
-	<string>1967</string>
+	<dict>
+		<key>url</key>
+		<string>https://www.dell.fr</string>
+		<key>year</key>
+		<string>1976</string>
+	</dict>
 	<key>New item - 19</key>
-	<string>1987</string>
+	<dict>
+		<key>url</key>
+		<string>https://www.apple.de</string>
+		<key>year</key>
+		<string>1987</string>
+	</dict>
 	<key>New item - 18</key>
-	<string>1945</string>
+	<dict>
+		<key>url</key>
+		<string>https://www.toto.com</string>
+		<key>year</key>
+		<string>1900</string>
+	</dict>
 	<key>New item - 17</key>
-	<string>2010</string>
+	<dict>
+		<key>year</key>
+		<string>2000</string>
+		<key>url</key>
+		<string>https://www.goole.de</string>
+	</dict>
 	<key>New item - 16</key>
-	<string>2011</string>
+	<dict>
+		<key>year</key>
+		<string>2007</string>
+		<key>url</key>
+		<string>https://www.dell.de</string>
+	</dict>
 	<key>New item - 15</key>
-	<string>1978</string>
+	<dict>
+		<key>url</key>
+		<string>https://www.dell.com</string>
+		<key>year</key>
+		<string>1978</string>
+	</dict>
 	<key>New item - 14</key>
-	<string>2018</string>
+	<dict>
+		<key>url</key>
+		<string>https://www.univ-fcomte.fr</string>
+		<key>year</key>
+		<string>1920</string>
+	</dict>
 	<key>New item - 13</key>
-	<string>1954</string>
+	<dict>
+		<key>year</key>
+		<string>1927</string>
+		<key>url</key>
+		<string>https://www.apple.it</string>
+	</dict>
 	<key>New item - 12</key>
-	<string>1932</string>
+	<dict>
+		<key>url</key>
+		<string>https://www.google.fr</string>
+		<key>year</key>
+		<string>1932</string>
+	</dict>
 	<key>New item - 11</key>
-	<string>2003</string>
+	<dict>
+		<key>url</key>
+		<string>https://www.wikipedia.fr</string>
+		<key>year</key>
+		<string>2003</string>
+	</dict>
+	<key>New item - 23</key>
+	<dict>
+		<key>url</key>
+		<string>https://www.dell.it</string>
+		<key>year</key>
+		<string>27</string>
+	</dict>
 	<key>New item - 10</key>
-	<string>1997</string>
+	<dict>
+		<key>url</key>
+		<string>https://www.tf1.fr</string>
+		<key>year</key>
+		<string>1971</string>
+	</dict>
 	<key>New item - 9</key>
-	<string>1970</string>
+	<dict>
+		<key>year</key>
+		<string>1968</string>
+		<key>url</key>
+		<string>https://www.france2.fr</string>
+	</dict>
 	<key>New item - 8</key>
-	<string>1948</string>
+	<dict>
+		<key>url</key>
+		<string>https://www.france24.fr</string>
+		<key>year</key>
+		<string>1920</string>
+	</dict>
 	<key>New item - 7</key>
-	<string>1950</string>
+	<dict>
+		<key>url</key>
+		<string>https//www.arte.fr</string>
+		<key>year</key>
+		<string>1960</string>
+	</dict>
 	<key>New item - 6</key>
-	<string>1969</string>
+	<dict>
+		<key>year</key>
+		<string>-200</string>
+		<key>url</key>
+		<string>https://www.c8.fr</string>
+	</dict>
 	<key>New item - 5</key>
-	<string>1966</string>
+	<dict>
+		<key>url</key>
+		<string>https://www.france3.fr</string>
+		<key>year</key>
+		<string>1978</string>
+	</dict>
 	<key>New item - 4</key>
-	<string>200</string>
+	<dict>
+		<key>url</key>
+		<string>https://www.france5.fr</string>
+		<key>year</key>
+		<string>1943</string>
+	</dict>
 	<key>New item - 3</key>
-	<string>-100</string>
+	<dict>
+		<key>url</key>
+		<string>https://www.netflix.com</string>
+		<key>year</key>
+		<string>2000</string>
+	</dict>
 	<key>New item - 2</key>
-	<string>2000</string>
+	<dict>
+		<key>url</key>
+		<string>https://www.sephora.fr</string>
+		<key>year</key>
+		<string>1990</string>
+	</dict>
 	<key>New item - 1</key>
-	<string>1900</string>
+	<dict>
+		<key>year</key>
+		<string>1989</string>
+		<key>url</key>
+		<string>https://www.mycanal.fr</string>
+	</dict>
 </dict>
 </plist>

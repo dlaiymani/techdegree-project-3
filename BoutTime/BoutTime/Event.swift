@@ -11,6 +11,7 @@ import Foundation
 struct Event: Comparable {
     let title: String
     let year: Int
+    let url: String
     
     static func < (lhs: Event, rhs: Event) -> Bool {
         return lhs.year < rhs.year

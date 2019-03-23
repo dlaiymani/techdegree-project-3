@@ -12,6 +12,7 @@ import WebKit
 class WebViewController: UIViewController, WKNavigationDelegate {
 
     var webView: WKWebView!
+    var url: String?
     
     override func loadView() {
         webView = WKWebView()
@@ -22,8 +23,9 @@ class WebViewController: UIViewController, WKNavigationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let url = URL(string: "https://ioscreator.com")!
-        webView.load(URLRequest(url: url))
+        if let urlToLoad = url, let url = URL(string: urlToLoad) {
+            webView.load(URLRequest(url: url))
+        }
         
         let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: webView, action: #selector(webView.reload))
         toolbarItems = [refresh]
@@ -31,14 +33,40 @@ class WebViewController: UIViewController, WKNavigationDelegate {
         
     }
     
+    // MARK: WKNavigationDelegate protocol
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         title = webView.title
     }
+    
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        
+        showAlert(title: "Error Loading Website", message: "The website is unaccessible")
 
-    /*
+    }
+    
+    
+    // MARK: AlertController
+    func showAlert(title: String, message: String, style: UIAlertController.Style = .alert) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: dismissAlert)
+        alertController.addAction(okAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func dismissAlert(sender: UIAlertAction) -> Void {
+        dismiss(animated: true, completion: nil)
+        
+    }
+    
     // MARK: - Navigation
 
+    @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
