@@ -30,7 +30,6 @@ class GameManager {
     func reinitGame() {
         self.game.events.removeAll()
         self.game = Game(eventsPerRound: eventsPerRound)
-        self.score = 0
     }
     
     // Return a array of 4 events

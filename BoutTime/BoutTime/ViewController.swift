@@ -123,6 +123,7 @@ class ViewController: UIViewController {
     
     // Change the buttons and the text
     func displayCorrectAnswer() {
+        SoundManager.playCorrectAnswerSound()
         timer.invalidate()
         timerLabel.isHidden = true
         let imageSuccess = UIImage(named: "next_round_success")
@@ -134,6 +135,7 @@ class ViewController: UIViewController {
     }
     
     func displayWrongAnswer() {
+        SoundManager.playIncorrectAnswerSound()
         timer.invalidate()
         timerLabel.isHidden = true
         let imageWrong = UIImage(named: "next_round_fail")
@@ -143,7 +145,6 @@ class ViewController: UIViewController {
         enableButtons()
     }
     
-    
     func prepareNextRound() {
         gameManager.currentRound += 1
         if gameManager.currentRound <= gameManager.numberOfRounds {
@@ -151,6 +152,7 @@ class ViewController: UIViewController {
             nextRoundButton.isHidden = true
             timerLabel.isHidden = false
             infoLabel.text = "Shake to complete"
+            print(gameManager.score)
             reinitTimer()
             displayEvents()
         } else { // End of the game
@@ -181,8 +183,8 @@ class ViewController: UIViewController {
     // Back from EndOfGameController -> new round
     @IBAction func unwindToViewController(segue: UIStoryboardSegue) {
         gameManager.currentRound = 0
+        gameManager.score = 0
         prepareNextRound()
-        
     }
 }
 
