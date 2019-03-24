@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     // MARK: Outlets
-    @IBOutlet var eventsButtons: [UIButton]!
+    @IBOutlet var factsButtons: [UIButton]!
     @IBOutlet var upButtons: [UIButton]!
     @IBOutlet var downButtons: [UIButton]!
     @IBOutlet weak var nextRoundButton: UIButton!
@@ -19,7 +19,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var infoLabel: UILabel!
     
     var timer = Timer()
-    let gameManager = GameManager(numberOfRounds: 6, eventsPerRound: 4, secondsPerRound: 60)
+    let gameManager = HistoricalQuiz(numberOfQuestionsPerRound: 4, numberOfRounds: 6, secondsPerRound: 60)
+
     var timerSeconds = 0
     
     var testMode = false // allow to display years and so to test more easily
@@ -28,7 +29,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.becomeFirstResponder()
 
-        displayEvents()
+        displayFacts()
         nextRoundButton.isHidden = true
         timerSeconds = gameManager.secondsPerRound
         startTimer()
@@ -43,7 +44,7 @@ class ViewController: UIViewController {
     
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
-            if gameManager.checkEventOrder() { // user answer is correct i.e. sorted
+            if gameManager.checkUserAnswer() { // user answer is correct i.e. sorted
                 displayCorrectAnswer()
             } else {
                 displayWrongAnswer()
@@ -53,15 +54,15 @@ class ViewController: UIViewController {
 
 
     // MARK: display the round
-    func displayEvents() {
-        for (index, event) in gameManager.game.events.enumerated() {
+    func displayFacts() {
+        for (index, event) in gameManager.questionsForRound.enumerated() {
             if testMode {
-                eventsButtons[index].setTitle("\(event.title) -> \(event.year)", for: .normal)
+                factsButtons[index].setTitle("\(event.title) -> \(event.year)", for: .normal)
             } else {
-                eventsButtons[index].setTitle("\(event.title)", for: .normal)
+                factsButtons[index].setTitle("\(event.title)", for: .normal)
 
             }
-            eventsButtons[index].isEnabled = false
+            factsButtons[index].isEnabled = false
         }
     }
     
@@ -72,8 +73,8 @@ class ViewController: UIViewController {
     @IBAction func downButtonTapped(_ sender: UIButton) {
         let buttonNumber = downButtons.index(where: {$0 == sender})
         if let buttonNumber = buttonNumber {
-            gameManager.game.events.swapAt(buttonNumber+1, buttonNumber)
-            displayEvents()
+            gameManager.questionsForRound.swapAt(buttonNumber+1, buttonNumber)
+            displayFacts()
         }
     }
     
@@ -81,8 +82,8 @@ class ViewController: UIViewController {
     @IBAction func upButtonTapped(_ sender: UIButton) {
         let buttonNumber = upButtons.index(where: {$0 == sender})
         if let buttonNumber = buttonNumber {
-            gameManager.game.events.swapAt(buttonNumber+1, buttonNumber)
-            displayEvents()
+            gameManager.questionsForRound.swapAt(buttonNumber+1, buttonNumber)
+            displayFacts()
         }
     }
     
@@ -102,7 +103,7 @@ class ViewController: UIViewController {
         // End of the timer (i.e. 60s)
        if timerSeconds == 0  || timerSeconds < 0 {
             // Need to check if the answer is correct
-            if gameManager.checkEventOrder() {
+            if gameManager.checkUserAnswer() {
                 displayCorrectAnswer()
             } else {
                 displayWrongAnswer()
@@ -123,7 +124,7 @@ class ViewController: UIViewController {
     
     // MARK: Next round management
     func enableButtons() {
-        for button in eventsButtons {
+        for button in factsButtons {
             button.isEnabled = true
         }
     }
@@ -155,12 +156,12 @@ class ViewController: UIViewController {
     func prepareNextRound() {
         gameManager.currentRound += 1
         if gameManager.currentRound <= gameManager.numberOfRounds {
-            gameManager.reinitGame()
+            gameManager.reinitQuiz()
             nextRoundButton.isHidden = true
             timerLabel.isHidden = false
             infoLabel.text = "Shake to complete"
             reinitTimer()
-            displayEvents()
+            displayFacts()
         } else { // End of the game
             performSegue(withIdentifier: "EndOfGame", sender: nil)
         }
@@ -180,7 +181,7 @@ class ViewController: UIViewController {
         } else { // WebView Segue
             if let navigationViewController = segue.destination as? UINavigationController,
                  let webViewController = navigationViewController.topViewController as? WebViewController , let sender = sender as? UIButton {
-                webViewController.url = gameManager.game.events[sender.tag].url            }
+                webViewController.url = gameManager.questionsForRound[sender.tag].url            }
         }
     }
     

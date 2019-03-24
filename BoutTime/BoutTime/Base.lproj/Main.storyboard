@@ -272,10 +272,10 @@
                         <outletCollection property="downButtons" destination="2m6-nc-x1u" collectionClass="NSMutableArray" id="dAn-9f-FGk"/>
                         <outletCollection property="downButtons" destination="SHf-Oc-xLI" collectionClass="NSMutableArray" id="h9k-Wm-5zI"/>
                         <outletCollection property="downButtons" destination="xGk-De-F0U" collectionClass="NSMutableArray" id="mTx-jE-F7P"/>
-                        <outletCollection property="eventsButtons" destination="aTe-cT-nja" collectionClass="NSMutableArray" id="6FD-1b-gwz"/>
-                        <outletCollection property="eventsButtons" destination="EoR-Xa-Bai" collectionClass="NSMutableArray" id="Jya-cT-MPW"/>
-                        <outletCollection property="eventsButtons" destination="QHS-mo-oz4" collectionClass="NSMutableArray" id="ihI-2d-N2I"/>
-                        <outletCollection property="eventsButtons" destination="Fhp-TT-wjr" collectionClass="NSMutableArray" id="1xK-0L-NmJ"/>
+                        <outletCollection property="factsButtons" destination="aTe-cT-nja" collectionClass="NSMutableArray" id="6FD-1b-gwz"/>
+                        <outletCollection property="factsButtons" destination="EoR-Xa-Bai" collectionClass="NSMutableArray" id="Jya-cT-MPW"/>
+                        <outletCollection property="factsButtons" destination="QHS-mo-oz4" collectionClass="NSMutableArray" id="ihI-2d-N2I"/>
+                        <outletCollection property="factsButtons" destination="Fhp-TT-wjr" collectionClass="NSMutableArray" id="1xK-0L-NmJ"/>
                         <segue destination="0yl-TL-1vT" kind="presentation" identifier="EndOfGame" id="Vr3-ua-bwu"/>
                     </connections>
                 </viewController>
