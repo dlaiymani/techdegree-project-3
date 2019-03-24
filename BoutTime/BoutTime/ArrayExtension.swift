@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Array extension to check if an arry is sorted or not
 extension Array where Element : Comparable {
     func isSorted() -> Bool {
         guard self.count > 1 else {

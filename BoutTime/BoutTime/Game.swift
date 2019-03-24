@@ -20,6 +20,7 @@ class Game {
         self.eventsPerRound = eventsPerRound
         self.events = [Event]()
         
+        // Load the events from a plist file
         do {
             let dictionary = try PlistConverter.dictionary(fromFile: "Event", ofType: "plist")
             self.eventsSet = EventsUnarchiver.eventsList(fromDictionary: dictionary)
@@ -28,7 +29,8 @@ class Game {
             fatalError("\(error)")
         }
         
-        // Ensure no duplicate questions in the quiz. questionSet have 4 elements at least
+        // Create a round
+        // Ensure no duplicate questions in the quiz.
         var alreadyChoosenEvent = [Int]()
         for _ in 0..<eventsPerRound {
             var randomNumber = 0

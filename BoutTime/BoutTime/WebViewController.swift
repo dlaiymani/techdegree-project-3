@@ -17,16 +17,18 @@ class WebViewController: UIViewController, WKNavigationDelegate {
     override func loadView() {
         webView = WKWebView()
         webView.navigationDelegate = self
-        view = webView
+        view = webView // The all view is a WKWebView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Load the URL. If error the WKNavigationDelegate protocol is implemented
         if let urlToLoad = url, let url = URL(string: urlToLoad) {
             webView.load(URLRequest(url: url))
         }
         
+        // Display the toolbar with a refresh button
         let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: webView, action: #selector(webView.reload))
         toolbarItems = [refresh]
         navigationController?.isToolbarHidden = false
@@ -34,10 +36,13 @@ class WebViewController: UIViewController, WKNavigationDelegate {
     }
     
     // MARK: WKNavigationDelegate protocol
+    
+    // Display the title when the url finish loading
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         title = webView.title
     }
     
+    // Error loading web site
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         showAlert(title: "Error Loading Website", message: "The website is unaccessible")
     }

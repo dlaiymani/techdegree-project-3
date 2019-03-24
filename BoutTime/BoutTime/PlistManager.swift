@@ -11,11 +11,10 @@ import Foundation
 enum EventsListError: Error {
     case invalidResource
     case conversionFailure
-    case invalidSelection
 }
 
+// Convert a .plist file and transform it into a dictionnary
 class PlistConverter {
-    
     static func dictionary(fromFile name: String, ofType: String) throws -> [String: AnyObject] {
         guard let path = Bundle.main.path(forResource: name, ofType: ofType) else {
             throw EventsListError.invalidResource
@@ -27,9 +26,9 @@ class PlistConverter {
         
         return dictionary
     }
-    
 }
 
+// Convert a dictionnary into an array of Event objects
 class EventsUnarchiver {
     static func eventsList(fromDictionary dictionary: [String: AnyObject]) -> [Event] {
         

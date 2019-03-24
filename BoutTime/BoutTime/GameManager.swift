@@ -13,18 +13,24 @@ class GameManager {
     var game: Game
     var numberOfRounds: Int
     var currentRound: Int
+    var score: Int
+    var eventsPerRound: Int
+    var secondsPerRound: Int
     
-    init(numberOfRounds: Int) {
+    init(numberOfRounds: Int, eventsPerRound: Int, secondsPerRound: Int) {
         self.numberOfRounds = numberOfRounds
-        game = Game(eventsPerRound: 4)
+        self.eventsPerRound = eventsPerRound
+        self.secondsPerRound = secondsPerRound
+        game = Game(eventsPerRound: eventsPerRound)
         self.currentRound = 1
+        self.score = 0
     }
     
     // Reinit the game for a new round
     func reinitGame() {
         self.game.events.removeAll()
-        self.game = Game(eventsPerRound: 4)
-        self.currentRound = 1
+        self.game = Game(eventsPerRound: eventsPerRound)
+        self.score = 0
     }
     
     // Return a array of 4 events
@@ -32,7 +38,7 @@ class GameManager {
         return game.events
     }
     
-    // FIXME:  Check if a user answer is correct
+    // Check if a user answer is correct
     func checkEventOrder() -> Bool {
         
         return game.events.isSorted()

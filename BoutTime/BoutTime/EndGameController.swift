@@ -11,16 +11,18 @@ import UIKit
 class EndGameController: UIViewController {
 
     var score: Int?
+    var numberOfRounds: Int?
     
     @IBOutlet weak var scoreLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let score = score {
-            scoreLabel.text = "\(score)/6"
+        // Just display the score
+        if let score = score, let numberOfRounds = numberOfRounds {
+            scoreLabel.text = "\(score)/\(numberOfRounds)"
         } else {
             score = 0
+            numberOfRounds = 0
         }
     }
     

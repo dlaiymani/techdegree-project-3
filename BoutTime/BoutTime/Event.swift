@@ -13,6 +13,8 @@ struct Event: Comparable {
     let year: Int
     let url: String
     
+    // Event implements Comparable so it is possible to compare 2 events
+    // depending on their year
     static func < (lhs: Event, rhs: Event) -> Bool {
         return lhs.year < rhs.year
     }
