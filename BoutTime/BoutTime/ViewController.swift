@@ -19,8 +19,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var infoLabel: UILabel!
     
     var timer = Timer()
-    let gameManager = GameManager(numberOfRounds: 2, eventsPerRound: 4, secondsPerRound: 30)
+    let gameManager = GameManager(numberOfRounds: 6, eventsPerRound: 4, secondsPerRound: 60)
     var timerSeconds = 0
+    
+    var testMode = false // allow to display years and so to test more easily
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +55,12 @@ class ViewController: UIViewController {
     // MARK: display the round
     func displayEvents() {
         for (index, event) in gameManager.game.events.enumerated() {
-            eventsButtons[index].setTitle("\(event.title) -> \(event.year)", for: .normal)
+            if testMode {
+                eventsButtons[index].setTitle("\(event.title) -> \(event.year)", for: .normal)
+            } else {
+                eventsButtons[index].setTitle("\(event.title)", for: .normal)
+
+            }
             eventsButtons[index].isEnabled = false
         }
     }
