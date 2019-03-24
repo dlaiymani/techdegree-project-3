@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet var downButtons: [UIButton]!
     @IBOutlet weak var nextRoundButton: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
-    @IBOutlet weak var infoLabel: UILabel! 
+    @IBOutlet weak var infoLabel: UILabel!
     
     var timer = Timer()
     let gameManager = GameManager(numberOfRounds: 6, eventsPerRound: 4, secondsPerRound: 60)
@@ -159,7 +159,6 @@ class ViewController: UIViewController {
             nextRoundButton.isHidden = true
             timerLabel.isHidden = false
             infoLabel.text = "Shake to complete"
-            print(gameManager.score)
             reinitTimer()
             displayEvents()
         } else { // End of the game
